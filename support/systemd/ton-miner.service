@@ -1,0 +1,15 @@
+[Unit]
+Description=TON OpenCL Miner
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=10
+User=kirill
+WorkingDirectory=/home/kirill/mining/miner
+ExecStart=/home/kirill/mining/miner/miner.py -c /home/kirill/mining/etc/miner-config.json
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,49 @@
+{
+  "devices": [
+    {
+      "worker_id": "miner1-gpu1",
+      "params": {
+        "bin": "miner-process.py",
+        "platform": 0,
+        "device": 0,
+        "vectors": 1,
+        "vdiv": 10
+      },
+      "giver": {
+        "range_start": 0,
+        "range_end": 5,
+        "freshest": true
+      }
+    }
+  ],
+  "giver_server": {
+    "port": 30022,
+    "address": "127.0.0.1"
+  },
+  "liteClient": {
+    "bin": "/opt/ton/bin/lite-client",
+    "mode": "cert",
+    "config": "/network/config/file/if/in/config/mode",
+    "certificate": "/liteserver/public/key/file/if/in/cert/mode",
+    "address": "liteserver.if.in.cert.mode:port",
+    "timeout": 5,
+    "retries": 1
+  },
+  "fift": {
+    "bin": "/opt/ton/bin/fift",
+    "includes": "/opt/ton/crypto/fift/lib/:/opt/ton/crypto/smartcont/"
+  },
+  "wallets": {
+    "workchain": 0
+  },
+  "intervals": {
+    "main_loop": 1,
+    "givers_poller": 1,
+    "targets_poller": 1,
+    "uploader": 1,
+    "worker_loop": 1
+  },
+  "paths": {
+    "work_root": "/writable/workpath"
+  }
+}
